@@ -1,0 +1,379 @@
+.filepane
+{
+    border: 1px solid;
+    border-color: #909090;
+    min-height: 200px;
+    position: relative;
+    margin: 10px 0;
+}
+
+.filepane.addfile, .filepane.green, .filepane.loaded.green
+{
+    border-color: #9DE1AE;
+}
+
+.filepane.failfile .delBtn, .filepane.failfile .detailBtn
+{
+    display: none;
+}
+
+.filepane.failfile .filerow
+{
+    padding-left: 30px;
+    padding-right: 8px;
+    background: url(img/uiSM-accountCancel.png) 6px center no-repeat;
+}
+    
+.filepane.loaded
+{
+    border-color: #909090;
+    -moz-transition-property: border-color;
+    -moz-transition-duration: 1.35s;
+    -moz-transition-delay: .4s;
+    -webkit-transition-property: border-color;
+    -webkit-transition-duration: 1.35s;
+    -webkit-transition-delay: .4s;
+    -ms-transition-property: border-color;
+    -ms-transition-duration: 1.35s;
+    -ms-transition-delay: .4s;
+    transition-property: border-color;
+    transition-duration: 1.35s;
+    transition-delay: .4s;
+}
+
+.folderNote
+{   border-bottom: 1px solid #909090;
+    background: #FFFEEB;
+    text-align: center;
+    padding: 5px;
+    display: none;
+    height: 15px;
+}
+
+.showFolderNote .folderNote 
+{
+    display: block;
+}
+
+.dragtext 
+{
+    position: absolute;
+    top: 48%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 26px;
+    color: #ddd;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    visibility: hidden;
+}
+    
+.filepane.loaded .dragtext 
+{
+    visibility: visible;
+}
+    
+.listholder
+{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
+    top: 0; bottom: 0; right: 0; left: 0;
+}
+
+.showFolderNote .listholder
+{
+    top: 27px;
+}
+    
+.uploadList 
+{
+    width: 100%;
+}
+    
+.uploadList tr 
+{
+    padding: 0 2px;
+}
+    
+.filerow
+{
+    line-height: 24px;
+    padding: 2px 0 1px 8px;
+    border-bottom: 1px solid #EAEAEA
+}
+    
+.filerow:only-child
+{
+    border: 0;
+}
+    
+.filerow-left
+{
+    float: left;
+    margin-right: -120px;
+    width: 100%;
+}
+.filerow-left .leftinner 
+{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 24px;
+    margin-right: 120px;
+}
+    
+.filerow:nth-child(even)
+{
+    background: #f9f9f9;
+}
+.addfile .filerow:hover 
+{
+    background: #f1f1f1;
+}
+    
+.addfile .filerow:nth-child(even):hover
+{
+    background: #e9e9e9;
+}
+.detailBtn 
+{
+    background: url('img/html5UploadDetails.png') top no-repeat;
+    height: 10px;
+    width: 10px;
+    display: inline-block;
+    margin-right: 8px;
+}
+.open .detailBtn 
+{
+    background-position: bottom;
+}
+    
+.delBtn
+{
+    visibility: hidden;
+}
+    
+.filerow:hover .delBtn
+{
+    visibility: visible;
+}
+    
+.uploadOpts
+{
+    min-height: 50px;
+}
+    
+.html5 .progressinfo, .html5 #progressinfocontainer
+{
+    width: 500px;
+    overflow: hidden;
+    max-height: 16px;
+}
+    
+.html5 #progresscontainer, .html5 .progresscontainer
+{
+    width: 520px;
+}
+
+.html5 #progressbarcontainer, .html5 .progressbarcontainer
+{
+    background-size: 100% 100% !important;
+}
+    
+.html5 .lowerLinks 
+{
+    margin: 10px auto;
+}
+
+.html5 #progressbar, .html5 .progressbar
+{
+	background-image: 
+	-webkit-gradient(linear, 0 0, 64 64,
+	    color-stop(0.00, rgba(255,255,255,0.14)),
+	    color-stop(0.25, rgba(255,255,255,0.14)),
+	    color-stop(0.26, rgba(255,255,255,0)),
+	    color-stop(0.50, rgba(255,255,255,0)),
+	    color-stop(0.51, rgba(255,255,255,0.14)),
+	    color-stop(0.75, rgba(255,255,255,0.14)),
+	    color-stop(0.76, rgba(255,255,255,0)),
+	    color-stop(1.00, rgba(255,255,255,0))
+	  ),-webkit-gradient(
+	    linear,
+	    left top,
+	    left bottom,
+	    color-stop(0.01, #73EC8C),
+	    color-stop(0.50, #07E22C)
+	) !important;
+	background-image: 
+	-moz-linear-gradient(134deg, rgba(255,255,255,0.14), rgba(255,255,255,0.14) 25%, rgba(255,255,255,0) 26%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.14) 51%, rgba(255,255,255,0.14) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0)),
+	-moz-linear-gradient(270deg, #73EC8C, #07E22C 50%)
+	!important;
+	background-image: -ms-linear-gradient(134deg, rgba(255,255,255,0.14), rgba(255,255,255,0.14) 25%, rgba(255,255,255,0) 26%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.14) 51%, rgba(255,255,255,0.14) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0)),
+	-ms-linear-gradient(270deg, #73EC8C, #07E22C 50%)
+	!important;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	border: 1px solid #39BA46 !important;
+	height: 19px;
+	-webkit-background-size: 64px 64px !important;
+	-moz-background-size: 64px 64px !important;
+	background-size: 64px 64px !important;
+}
+
+.html5 #progressbar.grey, .html5 .progressbar.grey
+{
+    background-image: 
+	-webkit-gradient(linear, 0 0, 64 64,
+	    color-stop(0.00, rgba(255,255,255,0.14)),
+	    color-stop(0.25, rgba(255,255,255,0.14)),
+	    color-stop(0.26, rgba(255,255,255,0)),
+	    color-stop(0.50, rgba(255,255,255,0)),
+	    color-stop(0.51, rgba(255,255,255,0.14)),
+	    color-stop(0.75, rgba(255,255,255,0.14)),
+	    color-stop(0.76, rgba(255,255,255,0)),
+	    color-stop(1.00, rgba(255,255,255,0))
+	  ),-webkit-gradient(
+	    linear,
+	    left top,
+	    left bottom,
+	    color-stop(0.01, #B4C2B7),
+	    color-stop(0.50, #7B9680)
+	) !important;
+	background-image: -moz-linear-gradient(134deg, rgba(255,255,255,0.14), rgba(255,255,255,0.14) 25%, rgba(255,255,255,0) 26%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.14) 51%, rgba(255,255,255,0.14) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0)),
+	-moz-linear-gradient(270deg, #B4C2B7, #7B9680 50%) !important
+	;
+	background-image: -ms-linear-gradient(134deg, rgba(255,255,255,0.14), rgba(255,255,255,0.14) 25%, rgba(255,255,255,0) 26%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.14) 51%, rgba(255,255,255,0.14) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0)),
+	-ms-linear-gradient(270deg, #B4C2B7, #7B9680 50%) !important
+	;
+	border: 1px solid #7C8C7E !important;
+}
+
+.html5 #progressbar.red, .html5 .progressbar.red
+{
+    background-image: 
+	-webkit-gradient(linear, 0 0, 64 64,
+	    color-stop(0.00, rgba(255,255,255,0.14)),
+	    color-stop(0.25, rgba(255,255,255,0.14)),
+	    color-stop(0.26, rgba(255,255,255,0)),
+	    color-stop(0.50, rgba(255,255,255,0)),
+	    color-stop(0.51, rgba(255,255,255,0.14)),
+	    color-stop(0.75, rgba(255,255,255,0.14)),
+	    color-stop(0.76, rgba(255,255,255,0)),
+	    color-stop(1.00, rgba(255,255,255,0))
+	  ),-webkit-gradient(
+	    linear,
+	    left top,
+	    left bottom,
+	    color-stop(0.01, #7A050B),
+	    color-stop(0.50, #96070F)
+	) !important;
+	background-image: -moz-linear-gradient(134deg, rgba(255,255,255,0.14), rgba(255,255,255,0.14) 25%, rgba(255,255,255,0) 26%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.14) 51%, rgba(255,255,255,0.14) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0)),
+	-moz-linear-gradient(270deg, #7A050B, #96070F 50%) !important
+	;
+	background-image: -ms-linear-gradient(134deg, rgba(255,255,255,0.14), rgba(255,255,255,0.14) 25%, rgba(255,255,255,0) 26%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.14) 51%, rgba(255,255,255,0.14) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0)),
+	-ms-linear-gradient(270deg, #7A050B, #96070F 50%) !important
+	;
+	border: 1px solid #FF4F38 !important;
+}
+
+.html5 #progressbar.anim, .html5 .progressbar.anim
+{
+	-webkit-animation: webstripes 3s linear infinite;
+	-moz-animation: mozstripes 3s linear infinite;
+	-ms-animation: msstripes 3s linear 0 infinite;
+	-animation: stripes 3s linear infinite;
+}
+
+.html5 #progressbar.animBack, .html5 .progressbar.animBack
+{
+	-webkit-animation: webstripesback 2s linear infinite;
+	-moz-animation: mozstripesback 2s linear infinite;
+	-ms-animation: msstripesback 2s linear 0 infinite;
+	-animation: stripesback 2s linear infinite;
+}
+
+@-webkit-keyframes webstripes {
+  0% {
+   background-position: 0 0;
+  }
+  100% 
+  {
+   background-position: 128px 0;
+  }
+} 
+
+@-moz-keyframes mozstripes {
+  0% {
+   background-position: 0 0;
+  }
+  100% 
+  {
+   background-position: 128px 0;
+  }
+} 
+
+@-ms-keyframes msstripes {
+  0% {
+   background-position: 0 0;
+  }
+  100% 
+  {
+   background-position: 128px 0;
+  }
+} 
+
+@keyframes stripes {
+  0% {
+   background-position: 0 0;
+  }
+  100% 
+  {
+   background-position: 128px 0;
+  }
+} 
+
+@-webkit-keyframes webstripesback {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+   background-position: -64px 0;
+  }
+} 
+
+@-moz-keyframes mozstripesback {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+   background-position: -64px 0;
+  }
+} 
+
+@-ms-keyframes msstripesback {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+   background-position: -64px 0;
+  }
+} 
+
+@keyframes stripesback {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+   background-position: -64px 0;
+  }
+} 

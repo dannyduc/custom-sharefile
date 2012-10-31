@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/html5.css">
+    <link rel="stylesheet" href="css/stylesNG.css">
+    <style>.masthead .logo { background-image:url(/styles/images/513a0fac-d4f8-40ce-8908-3b37094af0d4.png); }body {background-color:#FFF;background-image: none;}.masthead {}.masthead .MastheadShareFileNav {background-image:url(/styles/images/2272701f-9dff-4e42-935b-177b30658147.png);background-color: transparent;}.masthead .MastheadShareFileNav, .masthead .MastheadShareFileNav a, .masthead .MastheadShareFileNav a:hover { color:#666666; }h1, h2, .with-modal h2,.with-modal h3 { color:#246DAC; } .titleColor { color:#246DAC !important; }a, a:hover { color:#246DAC; } .folder-header .btn-ui, .linkColor { color:#246DAC !important; }.MiniPage .masthead .logo { background-position: center;;}</style>
+</head>
+
+<body>
+
+<div id="codetohide" style="display: block; ">
+    <div id="sfhtml5" class="" style="">
+        <div class="infotip hidden">
+            To upload, click the 'Choose Files' button and select files from the dialog window that pops up<span class="canDrag">, or simply drag files from your computer into the list</span>.
+            To upload multiple files <span class="canMultiSel">at once, hold down the Shift or Control key while selecting files</span><span class="noMultiSel hidden">re-click the Choose Files button again after selecting, before clicking upload</span>.
+            <br><br>
+
+            <strong>Note: Folders cannot be uploaded with this tool.
+                <br><br>
+
+                If you experience issues with this upload, you can also try our
+
+                <a class="whenReady" href="#" onclick="return checkFlash()">Flash uploader</a> or <br>
+
+                <a href="upload-storagecenter.aspx?id=r26d550f6b2b41fc8&amp;tool=standard">Standard Uploader</a>.
+            </strong></div><strong>
+        <div class="clear-block">
+            <div class="col-nm col3-2">
+                <a onclick="$('#fileInput').click(); return false;" class="btn-ui btnSTD22 whenReady"><span class="btn-inner"><span class="ico icoFileAddSM"></span><span class="text">Choose Files</span></span></a> <span class="canDrag">or drag and drop files</span>
+                <input type="file" multiple="" class="inline-block vhidden" style="height: 0; width: 0" id="fileInput">
+            </div>
+            <div class="col-nm col3-1 text-right">
+                <a class="btn-ui btnSTD22 whenReady nomarginr noproc commonOp" data-command="upload-clear"><span class="btn-inner"><span class="ico icoAccountCancelSM"></span><span class="text">Clear All</span></span></a>
+            </div>
+        </div>
+        <div class="filepane addfile loaded">
+            <div class="folderNote">Reminder: Folders cannot be uploaded with this tool.</div>
+            <div class="canDrag dragtext">DRAG FILES HERE</div>
+            <div class="listholder">
+                <div class="uploadList">
+                </div>
+            </div>
+        </div>
+        <div class="clear-block">
+            <div class="col col2-1">
+                <a id="ctl00_ContentHolder_HyperLinkUI3" class="btn-ui btnSTD30 html5UpBtn btn-disabled whenReady commonOp" value="Upload Files" data-command="upload-start" onclick="return false;" href="#"><span class="btn-inner"><span class="ico icoCheckGreen"></span><span class="text">Upload Files</span></span></a>
+                <a href="" onclick="cancel(); return false;">Back to Previous Page</a>
+            </div>
+            <div class="col-nm col2-1">
+                <ul class="std-inputs nomarginv uploadOpts">
+                    <li id="html5Unzip" class="hidden"><label><input type="checkbox"> Unzip file after uploading.</label></li>
+                    <li id="html5Overwrite" class="hidden"><label><input type="checkbox"> Overwrite files with the same name.</label></li>
+                    <li id="html5Notify" class="hidden"><label><input type="checkbox"> Send email notifications when finished.</label></li>
+                </ul>
+            </div>
+        </div>
+        <div class="fail hidden">
+            <div class="errortip ">
+                The following files failed to upload:
+            </div>
+            <div class="filepane failfile">
+                <div class="listholder">
+                    <div class="uploadList">
+                    </div>
+                </div>
+            </div>
+            <p class="text-right">
+                <a id="ctl00_ContentHolder_HyperLinkUI4" class="btn-ui btnSTD30 icoNone" onclick="cancel(); return false;" href="#"><span class="btn-inner"><span class="ico "></span><span class="text">Continue</span></span></a>
+            </p>
+        </div>
+        <div id="rowTemplate" class="hidden">
+            <div class="filerow clear-block">
+                <div class="clear-block">
+                    <div class="filerow-left">
+                        <div class="leftinner"><a href="#" class="detailBtn commonOp" data-command="upload-details"></a>
+                            <span class="ico16 icon_misc icon_FILEEXT"></span> FILENAME</div>
+                    </div>
+                    <span class="float-right">FILESIZE <a href="#" class="ico24 icoUserDelete delBtn commonOp" data-command="upload-rem"></a></span>
+                </div>
+            </div>
+        </div>
+        <div id="detailTemplate" class="hidden">
+            <div class="details hidden clear-block">
+                <ul class="std-inputs xshort nomarginv">
+                    <li><label><span class="desc">Title:</span></label><input class="xlong uploadTitle"></li>
+                    <li><label><span class="desc">Details:</span></label><textarea class="xlong uploadDetails"></textarea></li>
+                </ul>
+            </div>
+        </div>
+    </strong></div>
+    <strong>
+
+    <div id="sfstandard" class="hidden" style="display: none; ">
+        <form id="MainForm" enctype="multipart/form-data" method="post" action="https://storage-ec2-33.sharefile.com/upload.aspx?uploadid=408fb39da3f34920&amp;isbatch=false&amp;isbatchlast=true&amp;batchid=0de7635322&amp;pid=r26d550f6b2b41fc8&amp;uploadtool=standard&amp;expirationdate=12%2f31%2f9999+11%3a59%3a59+PM&amp;encparams=7ob0OMrG-hhun0BvuYO8MN0yqQ4PESkIql3XcaQS88EsvNZ-jhq6xnyI54ZzHekCdC6lvI7Lx_19hxKnkwXahq1fAzfAipJfwgYG9zgMqOzqgg9BAtAFMSBjPPiAwTINJgBRHeYe9ZiNyagnP_HswIZe2ztj449GN9DqbdM1q923_Gpa-231NT53qMCez_6R0VkdeAkjB6VbWybqqMcvmrydxSWaC8GWoHIiAkG0gVJepr-IT2HbwVnAuJVFa1Tx0SMVCq7JQ4hnkVctJgRrfUSkSUCipgFcipGE5yeBm46XpFXjt7XAkNWe72wT_iVoiRZu2WhCvgeaLWgNhklw8rQd-guJD5CqzUASIMT4myxQ4eTSxPkf3MbykA9GTPYrP33DB6IhfijGmSjtNE1cW862zuQJFB4xeVAygzJKIWySEpnc1gG9vUJ06UifyXvDnfY00OGpLYKeNhaRDW1Ji3hPJX-b9FF0303dAyYeJIre1hn_dauqUCvmbka_JbzLFxAY843C&amp;unzip=false">
+            <div class="infotip-clear">
+                <table cellspacing="0" cellpadding="0" border="0">
+                    <tbody><tr>
+                        <td width="50">File 1:</td>
+                        <td><div class="fileupload"><input type="file" id="File2" name="File2" class="file" size="16"></div></td>
+                    </tr>
+                    <tr><td colspan="2" height="8"></td></tr>
+                    <tr>
+                        <td width="50">File 2:</td>
+                        <td><div class="fileupload"><input type="file" id="File3" name="File3" class="file" size="16"></div></td>
+                    </tr>
+                    <tr><td colspan="2" height="8"></td></tr>
+                    <tr>
+                        <td width="50">File 3:</td>
+                        <td><div class="fileupload"><input type="file" id="File4" name="File4" class="file" size="16"></div></td>
+                    </tr>
+                    <tr><td colspan="2" height="8"></td></tr>
+                    <tr>
+                        <td width="50">File 4:</td>
+                        <td><div class="fileupload"><input type="file" id="File5" name="File5" class="file" size="16"></div></td>
+                    </tr>
+                    <tr><td colspan="2" height="8"></td></tr>
+                    <tr>
+                        <td width="50">File 5:</td>
+                        <td><div class="fileupload"><input type="file" id="File6" name="File6" class="file" size="16"></div></td>
+                    </tr>
+                    <tr><td colspan="2" height="8"></td></tr>
+                    <tr><td colspan="2">
+                        <div class="smallspacer"><!-- height fix --></div>
+                        <div class="rowcontainer">
+                            <a id="ctl00_ContentHolder_HyperLinkUI2" class="btn-ui btnSTD30 whenReady" onclick="handleUploadClick()" value="Upload Files"><span class="btn-inner"><span class="ico icoCheckGreen"></span><span class="text">Upload Files</span></span></a>
+                            <input id="stdSubmit" type="submit" class="hidden" value="Upload Files">
+                        </div>
+                    </td></tr>
+                    </tbody></table>
+            </div>
+        </form>
+    </div>
+</strong>
+</div>
+
+<script src="/custom-sharefile/javascript/jquery-latest.js"></script>
+<script src="/custom-sharefile/javascript/jquery.tooltip-min.js"></script>
+<script src="/custom-sharefile/javascript/colorbox/jquery.colorbox-min.js"></script>
+<script src="/custom-sharefile/javascript/sf/sortable.js"></script>
+<script src="/custom-sharefile/javascript/globalNG.js"></script>
+<script src="/custom-sharefile/javascript/sfhtml5.js"></script>
+<script>
+function checkIt(string) {
+    return navigator.userAgent.toLowerCase().indexOf(string) + 1;
+}  
+
+var uploadInProgess = false;
+
+function setUploadInProgress(val) {
+    uploadInProgress = val;
+}
+
+$(document).ready(function() {
+
+    // http://www.netlobo.com/url_query_string_javascript.html
+    function gup( name ) {
+        name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+        var regexS = "[\\?&]"+name+"=([^&#]*)";
+        var regex = new RegExp( regexS );
+        var results = regex.exec( window.location.href );
+        if( results == null )
+        return "";
+        else
+        return results[1];
+    }
+
+    var html5up, upOpts;
+    function pageInit() {
+        var id = gup("id");        
+        if (!id && console && console.log) {
+            console.log('ERROR: missing id parameter in ' + document.location);
+            return;
+        }
+        var sfurl = "https://ingenuity-it.sharefile.com/upload-storagecenter.aspx?id=" + id;
+        var q = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%20%3D%20'" + sfurl + "'&format=xml&diagnostics=true";
+        $.ajax({
+            url: q,
+            dataType: 'text'
+        }).done(function(xml) {
+            var regex = /upOpts = {([^}]+)/;
+            var opts = xml.match(regex)[1];
+
+            var upOpts = eval('({' + opts + '})');
+
+            html5up = new SFHtml5Upload(upOpts);
+            html5up.init();
+        });
+    }
+
+    pageInit();    
+});
+
+</script>
+</body>
+</html>

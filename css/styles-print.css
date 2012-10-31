@@ -1,0 +1,57 @@
+html
+{
+	background: none !important;
+	overflow:visible !important;
+	position:static !important;
+}
+
+body
+{
+	width: auto  !important;
+	overflow: visible !important;
+	position:static !important;
+	background: none !important;
+}
+
+#innerBody
+{
+	display: block !important;
+}
+
+#outer-outer, #outer-wrapper
+{
+	max-width: 9999px !important;
+	overflow: visible !important;
+	position: static !important;
+}
+
+.masthead, .slide-window
+{
+	display: none !important;
+}
+
+.MiniPage .masthead
+{
+	display: block !important;
+}
+
+.c-rounded .c-header li
+{
+	border: none;
+}
+
+.main-wrapper .inner
+{
+	padding: 0 !important;
+}
+
+.full-width 
+{
+	width: 100% !important;
+	border: 0 !important;
+}
+
+.hidePrint
+{
+	display: none;
+}
